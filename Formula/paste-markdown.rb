@@ -20,14 +20,12 @@ class PasteMarkdown < Formula
   end
 
   def post_install
-    user_apps = Pathname(Dir.home)/"Applications"
-    user_apps.mkpath
-    system "ln", "-sf", prefix/"Paste Markdown.app", user_apps/"Paste Markdown.app"
+    ln_sf prefix/"Paste Markdown.app", "/Applications/Paste Markdown.app"
   end
 
   def caveats
     <<~EOS
-      Paste Markdown.app has been linked to ~/Applications.
+      Paste Markdown.app has been linked to /Applications.
     EOS
   end
 end
