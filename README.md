@@ -11,6 +11,13 @@ brew tap leighmcculloch/paste-markdown
 brew install --HEAD paste-markdown
 ```
 
+To upgrade:
+
+```
+brew upgrade --fetch-head paste-markdown
+```
+
+
 ## Use
 
 1. Copy rich text (e.g. select text on a web page and copy).
