@@ -22,7 +22,7 @@ class PasteMarkdown < Formula
   def post_install
     user_apps = Pathname(Dir.home)/"Applications"
     user_apps.mkpath
-    ln_sf prefix/"Paste Markdown.app", user_apps/"Paste Markdown.app"
+    system "ln", "-sf", prefix/"Paste Markdown.app", user_apps/"Paste Markdown.app"
   end
 
   def caveats
