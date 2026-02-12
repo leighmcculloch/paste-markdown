@@ -1,0 +1,40 @@
+# Paste Markdown
+
+A macOS menu bar app that converts HTML on the clipboard to Markdown. Copy rich text from a website, press **⇧⌘M**, and the clipboard contents are replaced with Markdown ready to paste anywhere.
+
+## Install
+
+### Homebrew
+
+```
+brew tap leighmcculloch/paste-markdown https://github.com/leighmcculloch/paste-markdown
+brew install --HEAD paste-markdown
+open "$(brew --prefix paste-markdown)/Paste Markdown.app"
+```
+
+### From source
+
+```
+git clone https://github.com/leighmcculloch/paste-markdown.git
+cd paste-markdown
+make install
+open /Applications/Paste\ Markdown.app
+```
+
+### Uninstall
+
+```
+make uninstall
+```
+
+## Use
+
+1. Copy rich text (e.g. select text on a web page and copy).
+2. Press **⇧⌘M**, or click the clipboard icon in the menu bar and select **Convert Clipboard to Markdown**.
+3. Paste. The clipboard now contains Markdown.
+
+The menu bar icon briefly changes to a checkmark on success or an X if the clipboard has no HTML content.
+
+## Options
+
+- **Launch at Login** — available in the menu bar dropdown.
