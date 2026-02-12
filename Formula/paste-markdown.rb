@@ -19,10 +19,15 @@ class PasteMarkdown < Formula
     cp "build/AppIcon.icns", app/"Contents/Resources/"
   end
 
+  def post_install
+    user_apps = Pathname(Dir.home)/"Applications"
+    user_apps.mkpath
+    ln_sf prefix/"Paste Markdown.app", user_apps/"Paste Markdown.app"
+  end
+
   def caveats
     <<~EOS
-      To start Paste Markdown:
-        open "#{opt_prefix}/Paste Markdown.app"
+      Paste Markdown.app has been linked to ~/Applications.
     EOS
   end
 end
