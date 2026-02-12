@@ -7,24 +7,8 @@ A macOS menu bar app that converts HTML on the clipboard to Markdown. Copy rich 
 ### Homebrew
 
 ```
-brew tap leighmcculloch/paste-markdown https://github.com/leighmcculloch/paste-markdown
+brew tap leighmcculloch/paste-markdown
 brew install --HEAD paste-markdown
-open "$(brew --prefix paste-markdown)/Paste Markdown.app"
-```
-
-### From source
-
-```
-git clone https://github.com/leighmcculloch/paste-markdown.git
-cd paste-markdown
-make install
-open /Applications/Paste\ Markdown.app
-```
-
-### Uninstall
-
-```
-make uninstall
 ```
 
 ## Use
