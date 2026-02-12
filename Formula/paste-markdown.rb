@@ -19,13 +19,10 @@ class PasteMarkdown < Formula
     cp "build/AppIcon.icns", app/"Contents/Resources/"
   end
 
-  def post_install
-    ln_s prefix/"Paste Markdown.app", "/Applications/Paste Markdown.app"
-  end
-
   def caveats
     <<~EOS
-      Paste Markdown.app has been linked to /Applications.
+      To add Paste Markdown to your Applications folder, run:
+        ln -sf #{prefix/"Paste Markdown.app"} /Applications/
     EOS
   end
 end
