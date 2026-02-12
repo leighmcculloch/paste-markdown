@@ -20,7 +20,7 @@ class PasteMarkdown < Formula
   end
 
   def post_install
-    ln_sf prefix/"Paste Markdown.app", "/Applications/Paste Markdown.app"
+    ln_s prefix/"Paste Markdown.app", "/Applications/Paste Markdown.app"
   end
 
   def caveats
