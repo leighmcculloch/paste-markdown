@@ -6,8 +6,11 @@ APP_BUNDLE = build/$(APP_NAME).app
 build:
 	swift build -c release
 	mkdir -p "$(APP_BUNDLE)/Contents/MacOS"
+	mkdir -p "$(APP_BUNDLE)/Contents/Resources"
+	swift scripts/generate-icon.swift
 	cp .build/release/PasteMarkdown "$(APP_BUNDLE)/Contents/MacOS/"
 	cp Info.plist "$(APP_BUNDLE)/Contents/"
+	cp build/AppIcon.icns "$(APP_BUNDLE)/Contents/Resources/"
 	codesign --force --sign - "$(APP_BUNDLE)"
 
 install: build

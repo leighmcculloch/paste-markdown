@@ -9,10 +9,14 @@ class PasteMarkdown < Formula
   def install
     system "swift", "build", "-c", "release", "--disable-sandbox"
 
+    system "swift", "scripts/generate-icon.swift"
+
     app = prefix/"Paste Markdown.app"
     (app/"Contents/MacOS").mkpath
+    (app/"Contents/Resources").mkpath
     cp ".build/release/PasteMarkdown", app/"Contents/MacOS/"
     cp "Info.plist", app/"Contents/"
+    cp "build/AppIcon.icns", app/"Contents/Resources/"
   end
 
   def caveats
